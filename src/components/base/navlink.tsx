@@ -35,9 +35,11 @@ const path = [
   }
 ]
 
-export default function Navlink() {
+interface NavlinkProps {
+  scrolled: boolean
+}
+export default function Navlink({ scrolled }: NavlinkProps) {
   const pathname = usePathname()
-
 
   return (
     <>
@@ -46,7 +48,16 @@ export default function Navlink() {
           <Link
             key={index}
             href={item.path}
-            className={`${pathname === item.path ? "text-primary-900" : "text-gray-3"}`}>
+            className={`
+            ${scrolled
+                ? pathname === item.path
+                  ? "text-white"
+                  : "text-gray-300"
+                : pathname === item.path
+                  ? "text-blue-500"
+                  : "text-gray-500"
+              }
+          `}>
             {item.name}
           </Link>
         ))}
