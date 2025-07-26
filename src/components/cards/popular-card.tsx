@@ -4,12 +4,20 @@ import React from 'react'
 
 interface PopularCardProps {
   index: number
-  text: String
-  category: String
-  date: String
+  text: string
+  date: string
+  thumbnail: string
 }
 
-export default function PopularCard({ index, text, category, date }: PopularCardProps) {
+export default function PopularCard({ index, text, date, thumbnail }: PopularCardProps) {
+  const dateParsed = new Date(date);
+
+  const dd = String(dateParsed.getUTCDate()).padStart(2, '0');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+  const mm = months[dateParsed.getUTCMonth()];
+  const yy = String(dateParsed.getUTCFullYear()).slice(-2);
+
+  const parsedDate = `${dd} ${mm} ${yy}`;
   return (
     <div className="flex relative items-start gap-3 rounded-lg p-2 w-[500px] h-40 mt-5">
       {/* Nomor Urutan */}
@@ -20,7 +28,7 @@ export default function PopularCard({ index, text, category, date }: PopularCard
       {/* Gambar */}
       <div className="w-60 h-32 overflow-hidden rounded-md flex-shrink-0">
         <Image
-          src="/home-image.png"
+          src={thumbnail}
           alt="Thumbnail Berita"
           width={240}
           height={130}
@@ -37,10 +45,10 @@ export default function PopularCard({ index, text, category, date }: PopularCard
         </div>
         <div className="flex items-center gap-2 text-xs text-gray-500 mt-1">
           <Link href="/" className="text-blue-600 hover:underline">
-            {category}
+            Nasional
           </Link>
           <span>•</span>
-          <span>{date}</span>
+          <span>{parsedDate}</span>
         </div>
       </div>
     </div>

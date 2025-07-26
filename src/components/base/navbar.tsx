@@ -18,7 +18,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`flex items-center justify-between h-[106px] w-full px-10 border-1 border-gray-6 z-50 -top-0 sticky ${scrolled ? "bg-blue-500" : "bg-transparent"}`}>
+    <nav className={`flex items-center justify-between h-[106px] w-full px-10 border-b-1 border-gray-6 z-50 top-0 sticky ${scrolled ? "bg-blue-500" : "bg-transparent"}`}>
       <div className=''>
         {scrolled ?
           <Image src={"/Logo-white.png"} alt="Logo" width={160} height={44} />
