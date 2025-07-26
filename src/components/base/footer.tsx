@@ -3,6 +3,7 @@ import React from 'react'
 import { BsFacebook, BsInstagram, BsYoutube } from 'react-icons/bs'
 import { Input } from '../ui/input'
 import { Send } from 'lucide-react'
+import Navlink from './navlink'
 
 export default function Footer() {
   return (
@@ -35,13 +36,7 @@ export default function Footer() {
       <div className='flex gap-20'>
         <div className='flex flex-col gap-4'>
           <h1 className='font-semibold text-xl text-white'>Telusuri</h1>
-          <p className='text-sm text-white'>Beranda</p>
-          <p className='text-sm text-white'>Kesehatan</p>
-          <p className='text-sm text-white'>Otomotif</p>
-          <p className='text-sm text-white'>Politik</p>
-          <p className='text-sm text-white'>Olahraga</p>
-          <p className='text-sm text-white'>Nasional</p>
-          <p className='text-sm text-white'>International</p>
+          <Navlink scrolled footer />
         </div>
         <div className='flex flex-col gap-4'>
           <h1 className='font-semibold text-xl text-white'>Bantuan</h1>

@@ -87,6 +87,7 @@ export default function RecomendationSection() {
                   <PaginationLink
                     isActive={currentPage === item}
                     onClick={() => setCurrentPage(item)}
+                    className='cursor-pointer'
                   >
                     {item}
                   </PaginationLink>

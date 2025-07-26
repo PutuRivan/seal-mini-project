@@ -47,13 +47,17 @@ export default function Page() {
       {loading ? (
         <div className="grid grid-cols-4 gap-y-10 mt-5 place-items-center">
           {Array.from({ length: 8 }).map((item, index) => (
-            <SkeletonNews key={index}/>
+            <SkeletonNews key={index} />
           ))}
         </div>
       ) : (
         <div className="grid grid-cols-4 gap-y-10 mt-5 place-items-center">
           {data?.map((item, index) => (
-            <NewsCard key={index} title={item.title} date={item.pubDate} thumbnail={item.thumbnail} />
+            <NewsCard
+              key={index}
+              title={item.title}
+              date={item.pubDate}
+              thumbnail={item.thumbnail} />
           ))}
         </div>
       )}

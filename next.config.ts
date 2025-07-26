@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
     domains: [
       'via.placeholder.com',
       'img.antaranews.com',
-      "klimg.com"
+      "klimg.com",
+      "pict.sindonews.net"
     ],
   },
 };

@@ -37,13 +37,14 @@ const path = [
 
 interface NavlinkProps {
   scrolled: boolean
+  footer?: boolean
 }
-export default function Navlink({ scrolled }: NavlinkProps) {
+export default function Navlink({ scrolled, footer }: NavlinkProps) {
   const pathname = usePathname()
 
   return (
     <>
-      <div className='flex gap-4'>
+      <div className={`flex ${footer ? "flex-col" : "flex-row"} gap-4`}>
         {path.map((item, index) => (
           <Link
             key={index}
