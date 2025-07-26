@@ -39,7 +39,7 @@ export default function Page() {
     };
 
     if (category) fetchData();
-  }, [category]);
+  }, [category, selected.api]);
 
   return (
     <main className="p-10">
