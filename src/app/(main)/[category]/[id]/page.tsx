@@ -29,8 +29,8 @@ export default function DetailPage() {
             <PopularCard
               index={1}
               text={"Kenapa Eks Jenderal Israel Kritik Cara IDF Bebaskan 4 Sandera Hamas?"}
-              category={"Politik"}
               date={"22 Jan 2024"}
+              thumbnail=''
             />
           </aside>
         </section>
