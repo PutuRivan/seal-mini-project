@@ -19,7 +19,7 @@ export default function DetailPage() {
         <DetailBreadcrumb category={category} />
         <section className='flex gap-10'>
           <div>
-            <ContentContainer category={category} />
+            <ContentContainer category={category} thumbnail='/detail.png' />
             <CommentContainer />
             <DetailPagination />
             <NewsContainer />
@@ -30,7 +30,19 @@ export default function DetailPage() {
               index={1}
               text={"Kenapa Eks Jenderal Israel Kritik Cara IDF Bebaskan 4 Sandera Hamas?"}
               date={"22 Jan 2024"}
-              thumbnail=''
+              thumbnail='/popular-1.png'
+            />
+            <PopularCard
+              index={1}
+              text={"Daftar 6 Lahan Tambang Jatah Ormas Agama, NU Dapat Bekas Grup Bakrie"}
+              date={"22 Jan 2024"}
+              thumbnail='/popular-2.png'
+            />
+            <PopularCard
+              index={1}
+              text={"Kementerian BUMN Mulai Uji Coba Pegawai Kerja 4 Hari Sepekan"}
+              date={"22 Jan 2024"}
+              thumbnail='/popular-3.png'
             />
           </aside>
         </section>

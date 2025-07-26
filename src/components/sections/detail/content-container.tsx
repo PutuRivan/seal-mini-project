@@ -4,15 +4,16 @@ import React from 'react'
 
 interface ContentContainerProps {
   category: string
+  thumbnail: string
 }
 
-export default function ContentContainer({ category }: ContentContainerProps) {
+export default function ContentContainer({ category, thumbnail }: ContentContainerProps) {
   return (
     <>
       <div className='flex flex-col gap-3 py-5'>
         <h1 className='font-semibold text-4xl'>Pj. Gubernur Adhy Tekankan Pelayanan Berkualitas saat Sharing Session di RSUD Dr. Soetomo</h1>
         <div className="flex items-center gap-2 text-xs text-gray-500 mt-1">
-          <Link href="/" className="text-blue-600 hover:underline">
+          <Link href={`/${category}`} className="text-blue-600 hover:underline">
             {category.charAt(0).toUpperCase() + category.slice(1)}
           </Link>
           <span>•</span>
@@ -21,7 +22,7 @@ export default function ContentContainer({ category }: ContentContainerProps) {
       </div>
       <figure className='flex flex-col gap-1'>
         <Image
-          src="/home-image.png"
+          src={thumbnail}
           alt="Thumbnail Berita"
           width={240}
           height={130}
@@ -30,7 +31,25 @@ export default function ContentContainer({ category }: ContentContainerProps) {
         <figcaption className='text-sm text-[#959EA9]'>Rumput GBK tidak kunjung bagus, Timnas Indonesia bisa pindah kandang. (CNN Indonesia/Adhi Wicaksono)</figcaption>
       </figure>
       <p className='text-sm py-5'>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur tenetur quia sunt maiores non placeat dolor unde neque voluptatibus! Esse, fuga nemo accusantium accusamus, nesciunt quis maxime ipsa vero laboriosam tempore sunt reiciendis praesentium temporibus voluptate qui itaque, modi beatae a illo debitis? Mollitia expedita, tempore labore iusto maiores quam vel! Nihil odit, blanditiis laboriosam explicabo, vitae nobis eius nostrum nam molestias illo officiis possimus totam cumque minima sed aut necessitatibus dolorum atque exercitationem aliquid quos quam commodi eos sequi. Rem saepe, omnis maxime voluptatem sed amet et non provident at molestiae, aliquam totam, tempora fugiat minima quasi quod. Sequi est tempora alias, dolor itaque dignissimos sint facilis? Quaerat quae dolorem eveniet aliquid modi voluptates a vero corrupti? Amet sequi incidunt in architecto blanditiis, ea laboriosam dolore ipsum quam sed voluptatem deleniti laudantium veritatis dignissimos repudiandae, officia, debitis earum iste delectus officiis eius. Fugiat cupiditate modi architecto consequatur quas a molestiae laudantium distinctio dolorum soluta repudiandae eligendi unde quam nihil pariatur, aspernatur reiciendis eos. Dignissimos nulla magni, accusantium esse laborum optio minus totam neque aliquam nesciunt eveniet, libero, enim voluptas quisquam dolorem nihil. Veritatis provident alias laboriosam molestias reprehenderit soluta quibusdam magnam placeat minima doloremque. Optio rem debitis, inventore nihil incidunt doloribus aspernatur laboriosam, odit aut quia cupiditate eveniet exercitationem officia impedit consectetur commodi! Expedita ab fugiat obcaecati iste recusandae voluptates rerum quam quibusdam, nihil eaque eligendi porro nemo labore mollitia facilis? Incidunt facilis quam, dolorem doloremque odio nemo cumque voluptatum inventore magni ut nesciunt, soluta laborum error unde architecto ullam quod quas natus quibusdam animi quaerat! Saepe amet est accusamus, reiciendis omnis exercitationem suscipit fugiat animi deserunt veritatis eaque itaque, blanditiis et rem rerum? Officia, id pariatur sint dolores illum dolorum vel illo veritatis quaerat ipsum! Velit natus amet explicabo nemo esse nam quas vel necessitatibus sint voluptates exercitationem voluptatum dolores, voluptatem fugit doloribus assumenda atque magni sequi earum? A, at similique quia totam cum recusandae quod nam veritatis ab odit ducimus sunt natus blanditiis beatae error quo voluptatem libero, facere veniam asperiores hic aliquid ratione qui. Deserunt, aut dolorem. Odio unde autem itaque. Eveniet suscipit, dolore nobis itaque quis obcaecati aperiam reiciendis odio eos repellendus fugiat rem iusto impedit quae tempore? Rem non voluptatem suscipit cupiditate magni corrupti? Impedit adipisci molestiae ipsa excepturi repellat quas magnam reiciendis, natus facilis harum vero quod dicta laudantium tempore officiis ab nulla sequi cupiditate enim aut? Odit enim nostrum reprehenderit velit labore. Accusamus, neque ipsa? Temporibus ipsam debitis enim illum molestias. Tempore, illum. Cupiditate, dolorem corrupti iusto, esse, fugit distinctio eaque explicabo nesciunt delectus quidem voluptatem cum perferendis pariatur. Sequi esse, repellendus neque corporis laborum minima vero eius placeat porro illo omnis quo nostrum, amet enim voluptate, repudiandae ullam ab. Neque, quam? Facere maxime numquam vero maiores rem assumenda deserunt odit tenetur, ut molestias dolore sit quibusdam omnis iure beatae nulla veritatis voluptate sed accusamus hic nihil totam quidem? Eius ea impedit mollitia aliquid quos neque laudantium vel dolorum provident! Cum eligendi, eum vero sed voluptatem repudiandae quasi, ullam error enim quaerat libero dolores rem debitis assumenda et labore molestiae ex quia officia ipsam! Excepturi aut velit accusantium optio soluta natus iure voluptatum pariatur ipsum unde. Aliquam iure nobis voluptatem voluptates expedita sapiente neque soluta tempore incidunt iste, excepturi autem! Voluptatem quae enim error veritatis unde fugit commodi porro sunt eligendi numquam animi iusto quibusdam delectus dolorem sit dignissimos nobis ex debitis possimus similique, impedit cupiditate alias sapiente vero! Ut aut praesentium totam harum ad non itaque perferendis culpa quaerat, et tenetur aspernatur a laborum rem voluptas corporis eos excepturi asperiores! Tempore voluptatem odit sit totam, dolor expedita vero esse ipsum nostrum ea harum blanditiis? Adipisci eos doloremque quos dicta facere sapiente beatae iure nostrum, cumque quas non eligendi nemo dolor, in quam corporis necessitatibus at placeat aut accusantium, assumenda officiis totam. Minima ea corporis, consequuntur nihil iusto nesciunt minus nisi odit ipsum voluptate cum reprehenderit quos illo, cumque fugiat sed incidunt dolorum laborum numquam placeat obcaecati assumenda iure, maiores vitae. Asperiores quaerat eaque, velit aperiam, placeat ad libero quod ullam quae quasi facilis corporis voluptatibus totam labore odio perspiciatis veniam harum molestias amet eligendi tempore esse maxime sed deserunt. Earum laudantium perspiciatis velit placeat. Quas ex veritatis facilis quibusdam voluptatibus culpa perferendis illum a quod dolorem dolor ipsa, odio delectus harum tempore animi quia blanditiis labore quae velit laborum officiis. Repudiandae a incidunt debitis odio. Dignissimos commodi incidunt architecto rem itaque consequatur ullam ratione et blanditiis hic cum minima laboriosam, ducimus reprehenderit eveniet exercitationem adipisci maxime, iusto vel. Hic, quae. Quaerat odio inventore neque vel corrupti asperiores porro aut libero deserunt quas nisi expedita possimus temporibus, fugit tempora aliquam qui nobis nulla atque, quibusdam vero quidem sapiente eaque id? Qui dicta unde quas, incidunt in minus voluptas odio natus pariatur dolorem eligendi obcaecati et amet ea officia cum optio tempore, aperiam sunt architecto nesciunt. Ea nobis eius voluptate iusto iure soluta, ipsa ad? Illum culpa architecto amet quasi! Voluptates eaque blanditiis eos accusamus molestiae porro voluptatum consectetur similique dolores, esse, eligendi dolor voluptatibus quasi doloremque autem officia, quisquam id! Consectetur doloremque veniam beatae autem dolorem placeat labore assumenda alias explicabo cumque aperiam unde eos, commodi quisquam suscipit ipsam quibusdam ea quia voluptatum sit! Odio, ad cumque provident fugiat iusto quis vitae quia ex porro culpa saepe, rem magnam error eligendi? Culpa nulla rerum cum tenetur eos fuga itaque at quidem natus nesciunt iure incidunt assumenda necessitatibus laborum temporibus voluptate, libero vitae deserunt beatae facere officiis, a, architecto cumque impedit. Explicabo esse corrupti quis fuga voluptatibus maxime vitae illo, blanditiis voluptas sit molestias unde atque impedit nam optio iste laudantium illum iusto facilis odio cumque quod et? Blanditiis distinctio eius praesentium culpa non odio deleniti molestiae obcaecati rerum, fugit quisquam sint perspiciatis maxime eos eum consequatur. Quam esse beatae quae, dolorum optio eligendi repellat vero id ratione nam dolorem saepe consequatur vitae temporibus, consequuntur iste autem, sequi minima recusandae! Est, officiis sit deserunt necessitatibus nulla rem voluptates voluptate natus eaque veniam, mollitia animi quam, deleniti recusandae impedit illo facere nam praesentium fuga.
+        Jakarta, CNN Indonesia --Ketua Badan Tim Nasional (BTN) PSSI Sumardji merespons peluang Timnas
+        Indonesia pindah dari Stadion Utama Gelora Bung Karno (GBK) apabila  lolos ke putaran ketiga
+        Kualifikasi Piala Dunia 2026. Akhir-akhir ini rumput lapangan Stadion
+        GBK yang jadi markas Indonesia  dalam babak kedua Kualifikasi Piala Dunia 2026 kerap bermasalah.
+        Pada pertandingan kandang pertama melawan Vietnam, Maret lalu, rumput  GBK rusak parah.
+        PPKGBK selalu pengelola pun mendapat kritik deras.
+      </p>
+      <p className='text-sm py-5'>
+        Acara-acara di luar  sepak bola itu kerap membuat kondisi rumput tidak sehat dan tidak
+        terlihat bagus saat pertandingan, khususnya laga Timnas Indonesia.
+        Sampai saat melawan Irak, rumput GBK tidak terlihat sempurna meskipun
+        kondisinya lebih bagus dibanding lawan Vietnam. Opsi pindah kandang pun  muncul.
+      </p>
+      <p className='text-sm py-5'>
+        "Nanti kami akan  sampaikan [rencana pindah dari GBK]," ujar Sumardji saat ditanya  kemungkinan menggunakan stadion lain di putaran ketiga kualifikasi.
+        Sumardji tidak membantah kondisi rumput GBK yang masih kurang bagus  dalam duel Indonesia vs Irak. PSSI pun berharap PPKGBK bisa lebih  memperhatikan
+        kondisi rumput untuk pertandingan Skuad Garuda. "Kami sampai saat ini sudah telepon dengan pengelola GBK karena kondisi
+        rumput kemarin kurang bagus, kami memohon ke pihak GBK supaya  betul-betul disiapkan dan diperhatikan kondisi rumput," tutur Sumardji. "Kalau dilihat-lihat
+        sepertinya kondisi rumput GBK kayaknya stres itu,  sehingga dengan kondisi itu akan memengaruhi, tadi saya telepon supaya  diperhatikan," kata Sumardji menambahkan.
       </p>
     </>
   )

@@ -8,7 +8,7 @@ export default function CommentTextBoxCard() {
     <div className='flex flex-row gap-5 border-b-2 py-5 border-[#E0E0E0] '>
       <figure className='w-10 h-10'>
         <Image
-          src="/avatar.png"
+          src="/avatar-1.png"
           alt="Thumbnail Berita"
           width={50}
           height={50}
