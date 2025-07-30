@@ -2,11 +2,9 @@
 
 import NewsCard from "@/components/cards/news-card";
 import SkeletonNews from "@/components/skeletons/skeleton-news";
-import { Tdata } from "@/libs/types";
+import { Category, Tdata } from "@/libs/types";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-
-type Category = "gaya-hidup" | "nasional" | "international";
 
 export default function Page() {
   const { category } = useParams<{ category: string }>() ?? {};
@@ -17,6 +15,7 @@ export default function Page() {
     "gaya-hidup": { label: "Gaya Hidup", api: "lifestyle" },
     "nasional": { label: "Nasional", api: "politik" },
     "international": { label: "International", api: "dunia" },
+    "recomendation": { label: "Recomendation", api: "terbaru" },
   };
 
   const isCategory = (category: string): category is Category => {
@@ -57,7 +56,10 @@ export default function Page() {
               key={index}
               title={item.title}
               date={item.pubDate}
-              thumbnail={item.thumbnail} />
+              thumbnail={item.thumbnail}
+              category="terbaru"
+              source="antara"
+            />
           ))}
         </div>
       )}

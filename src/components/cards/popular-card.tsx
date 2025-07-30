@@ -1,3 +1,4 @@
+import { parsedDate } from '@/libs/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -7,17 +8,12 @@ interface PopularCardProps {
   text: string
   date: string
   thumbnail: string
+  source: string
+  category: string
 }
 
-export default function PopularCard({ index, text, date, thumbnail }: PopularCardProps) {
-  const dateParsed = new Date(date);
+export default function PopularCard({ index, text, date, thumbnail, source, category }: PopularCardProps) {
 
-  const dd = String(dateParsed.getUTCDate()).padStart(2, '0');
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
-  const mm = months[dateParsed.getUTCMonth()];
-  const yy = String(dateParsed.getUTCFullYear()).slice(-2);
-
-  const parsedDate = `${dd} ${mm} ${yy}`;
   return (
     <div className="flex relative items-start gap-3 rounded-lg p-2 w-[500px] h-40 mt-5">
       {/* Nomor Urutan */}
@@ -39,16 +35,22 @@ export default function PopularCard({ index, text, date, thumbnail }: PopularCar
       {/* Konten */}
       <div className="flex flex-col justify-between gap-5">
         <div>
-          <p className="text-sm font-bold text-black">
+          <Link href={{
+            pathname: `/popular/${text}`,
+            query: {
+              source: source,
+              category: category
+            }
+          }} className="text-sm font-bold text-black">
             {text}
-          </p>
+          </Link>
         </div>
         <div className="flex items-center gap-2 text-xs text-gray-500 mt-1">
           <Link href="/" className="text-blue-600 hover:underline">
             Nasional
           </Link>
           <span>•</span>
-          <span>{parsedDate}</span>
+          <span>{parsedDate(date)}</span>
         </div>
       </div>
     </div>

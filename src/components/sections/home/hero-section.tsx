@@ -9,8 +9,9 @@ import { Tdata } from '@/libs/types';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { BsCalendarEvent } from 'react-icons/bs';
+import { parsedDate } from '@/libs/utils';
 
-export default function NewsCarousel() {
+export default function HeroSection() {
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
     slideChanged(slider) {
@@ -51,11 +52,15 @@ export default function NewsCarousel() {
               <p className="text-md">{item.description}</p>
               <div className="flex gap-2 items-center">
                 <BsCalendarEvent />
-                <span>{new Date(item.pubDate).toLocaleDateString('id-ID', {
-                  year: 'numeric', month: 'long', day: 'numeric'
-                })}</span>
+                <span>{parsedDate(item.pubDate)}</span>
               </div>
-              <Link href={""} className="text-sm text-blue-600 mt-2 hover:underline inline-block">
+              <Link href={{
+                pathname: `/nasional/${item.title}`,
+                query: {
+                  source: "sindonews",
+                  category: "nasional",
+                }
+              }} className="text-sm text-blue-600 mt-2 hover:underline inline-block">
                 Baca Selengkapnya ↗
               </Link>
             </div>

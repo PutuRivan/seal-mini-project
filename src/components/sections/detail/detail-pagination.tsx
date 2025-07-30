@@ -16,23 +16,22 @@ export default function DetailPagination() {
           <PaginationItem className='mx-2'>
             <PaginationLink
               size="default"
-              href="#"
               className='gap-1 px-2.5 sm:pl-2.5'>
               <ChevronLeft />
             </PaginationLink>
           </PaginationItem>
           <PaginationItem className='mx-2'>
-            <PaginationLink href="#" isActive variant='link'>1</PaginationLink>
+            <PaginationLink isActive variant='link'>1</PaginationLink>
           </PaginationItem>
           <PaginationItem>
-            <PaginationLink href="#" >
+            <PaginationLink  >
               2
             </PaginationLink>
           </PaginationItem >
           <PaginationItem className='mx-2'>
             <PaginationLink
               size="default"
-              href="#"
+
               className='gap-1 px-2.5 sm:pl-2.5'>
               <ChevronRight />
             </PaginationLink>

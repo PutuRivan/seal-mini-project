@@ -1,7 +1,7 @@
 "use client"
 
-import React from 'react'
-import { useParams } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
+import { useParams, useSearchParams } from 'next/navigation'
 import HeaderTitle from '@/components/sections/header-title'
 import DetailBreadcrumb from '@/components/sections/detail/detail-breadcrumb'
 import CommentContainer from '@/components/sections/detail/comment-container'
@@ -10,40 +10,60 @@ import PopularCard from '@/components/cards/popular-card'
 import { Button } from '@/components/ui/button'
 import DetailPagination from '@/components/sections/detail/detail-pagination'
 import NewsContainer from '@/components/sections/detail/news-container'
+import { Tdata } from '@/libs/types'
 
 export default function DetailPage() {
-  const { category, id } = useParams<{ category: string, id: string }>()
+  const [detail, setDetail] = useState<Tdata[]>([])
+  const [popular, setPopular] = useState<Tdata[]>([])
+  const { category } = useParams<{ category: string, id: string }>()
+  const query = useSearchParams()
+  const decodedsource = decodeURIComponent(query.get('source') || '')
+  const decodedcategory = decodeURIComponent(query.get('category') || '')
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const res = await fetch(`https://api-berita-indonesia.vercel.app/${decodedsource}/${decodedcategory}`);
+        const popular = await fetch(`https://api-berita-indonesia.vercel.app/merdeka/jakarta`);
+        const result = await res.json();
+        const popularResult = await popular.json();
+        setDetail(result.data.posts.slice(0, 1).map((item: Tdata) => item));
+        setPopular(popularResult.data.posts.slice(0, 3));
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    if (decodedsource || decodedcategory) {
+      fetchNews();
+    }
+
+  }, [decodedsource, decodedcategory]);
+
   return (
     <>
       <main className='flex flex-col p-10'>
         <DetailBreadcrumb category={category} />
         <section className='flex gap-10'>
           <div>
-            <ContentContainer category={category} thumbnail='/detail.png' />
+            <ContentContainer category={category} data={detail} />
             <CommentContainer />
             <DetailPagination />
             <NewsContainer />
           </div>
           <aside className='flex flex-col'>
             <HeaderTitle title='Berita Terpopuler' />
-            <PopularCard
-              index={1}
-              text={"Kenapa Eks Jenderal Israel Kritik Cara IDF Bebaskan 4 Sandera Hamas?"}
-              date={"22 Jan 2024"}
-              thumbnail='/popular-1.png'
-            />
-            <PopularCard
-              index={1}
-              text={"Daftar 6 Lahan Tambang Jatah Ormas Agama, NU Dapat Bekas Grup Bakrie"}
-              date={"22 Jan 2024"}
-              thumbnail='/popular-2.png'
-            />
-            <PopularCard
-              index={1}
-              text={"Kementerian BUMN Mulai Uji Coba Pegawai Kerja 4 Hari Sepekan"}
-              date={"22 Jan 2024"}
-              thumbnail='/popular-3.png'
-            />
+            {popular.map((item, index) => (
+              <PopularCard
+                key={index}
+                index={index + 1}
+                text={item.title}
+                date={item.pubDate}
+                thumbnail={item.thumbnail}
+                source="merdeka"
+                category="jakarta"
+              />
+            ))}
           </aside>
         </section>
       </main>

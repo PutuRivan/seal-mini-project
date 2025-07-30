@@ -56,6 +56,8 @@ export default function RecomendationSection() {
             thumbnail={item.thumbnail}
             title={item.title}
             date={item.pubDate}
+            source="antara"
+            category="terbaru"
           />
         ))}
       </div>

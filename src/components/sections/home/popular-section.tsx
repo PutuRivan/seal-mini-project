@@ -28,6 +28,8 @@ export default function PopularSection() {
             text={item.title}
             date={item.pubDate}
             thumbnail={item.thumbnail}
+            source="merdeka"
+            category="jakarta"
           />
         ))}
       </div>
